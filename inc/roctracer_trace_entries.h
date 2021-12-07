@@ -8,7 +8,6 @@
 #include <roctracer_roctx.h>
 #include <roctracer_hsa.h>
 #include <roctracer_hip.h>
-#include <roctracer_kfd.h>
 #include <ext/prof_protocol.h>
 #include <ext/hsa_rt_utils.hpp>
 
