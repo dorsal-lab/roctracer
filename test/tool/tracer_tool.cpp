@@ -1128,7 +1128,7 @@ extern "C" PUBLIC_API bool OnLoad(HsaApiTable* table, uint64_t runtime_version, 
 
       if (hip_api_array_size != 0) {
         for (unsigned i = 0; i < hip_api_array_size; ++i) {
-          uint32_t cid = HIP_API_ID_NUMBER;
+          uint32_t cid = HIP_API_ID_NONE;
           const char* api = hip_api_array[i];
           ROCTRACER_CALL(roctracer_op_code(ACTIVITY_DOMAIN_HIP_API, api, &cid, NULL));
           ROCTRACER_CALL(roctracer_enable_op_callback(ACTIVITY_DOMAIN_HIP_API, cid, hip_api_callback, NULL));
