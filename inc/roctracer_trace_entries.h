@@ -74,16 +74,4 @@ struct hip_activity_trace_entry_t {
   uint32_t pid;
 };
 
-struct kfd_api_trace_entry_t {
-  std::atomic<uint32_t> valid;
-  roctracer::entry_type_t type;
-  uint32_t domain;
-  uint32_t cid;
-  timestamp_t begin;
-  timestamp_t end;
-  uint32_t pid;
-  uint32_t tid;
-  kfd_api_data_t data;
-};
-
 #endif
