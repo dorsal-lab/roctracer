@@ -450,9 +450,9 @@ void hip_api_callback(
     entry->valid.store(roctracer::TRACE_ENTRY_COMPL, std::memory_order_release);
   }
 
-  const char * name = roctracer_op_string(domain, cid, 0);
-  DEBUG_TRACE("hip_api_callback(\"%s\") phase(%d): cid(%u) data(%p) entry(%p) name(\"%s\") correlation_id(%lu) timestamp(%lu)\n",
-    name, data->phase, cid, data, entry, (entry) ? entry->name : NULL, data->correlation_id, timestamp);
+  // const char * name = roctracer_op_string(domain, cid, 0);
+  // DEBUG_TRACE("hip_api_callback(\"%s\") phase(%d): cid(%u) data(%p) entry(%p) name(\"%s\") correlation_id(%lu) timestamp(%lu)\n",
+    // name, data->phase, cid, data, entry, (entry) ? entry->name : NULL, data->correlation_id, timestamp);
 }
 
 void mark_api_callback(
@@ -644,8 +644,8 @@ void pool_activity_callback(const char* begin, const char* end, void* arg) {
 
   while (record < end_record) {
     const char * name = roctracer_op_string(record->domain, record->op, record->kind);
-    DEBUG_TRACE("pool_activity_callback(\"%s\"): domain(%u) op(%u) kind(%u) record(%p) correlation_id(%lu) beg(%lu) end(%lu)\n",
-      name, record->domain, record->op, record->kind, record, record->correlation_id, record->begin_ns, record->end_ns);
+    // DEBUG_TRACE("pool_activity_callback(\"%s\"): domain(%u) op(%u) kind(%u) record(%p) correlation_id(%lu) beg(%lu) end(%lu)\n",
+      // name, record->domain, record->op, record->kind, record, record->correlation_id, record->begin_ns, record->end_ns);
 
     switch(record->domain) {
       case ACTIVITY_DOMAIN_HCC_OPS:
